@@ -1,3 +1,11 @@
+# Get current public IP. We'll need this so we can access the Storage Account from our PC.
+data "http" "current_public_ip" {
+  url = "http://ipinfo.io/json"
+  request_headers = {
+    Accept = "application/json"
+  }
+}
+
 resource "azurerm_storage_account" "storage_functapp" {
   name                      = "acthubtestdev"
   resource_group_name       = var.resource_group_name
