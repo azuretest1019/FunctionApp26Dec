@@ -1,0 +1,35 @@
+I have a question - In your updated code you are not using storage account private end point but in the below document you are referring it, Just wondering, Why?
+
+
+How to create function app with private storage account?
+1)	Choose an Azure subscription, resource group, location to create a function app.
+2)	Create or assign an app service plan for the function app.
+3)	Associate a storage account with the function app.
+4)	Enable the network option for the function app.
+5)	Select the private endpoints for the function app.
+6)	Assign a virtual network to the function app.
+7)	Assign a subnet in the virtual network to the function app.
+8)	Assign the function app to a DNS.
+9)	Assign an outbound subnet for the function app.
+10)	Assign tags to the function app.
+11)	Create the function app.
+Properties to check after the function app resource is created
+1)	Check function app keys. There should be two keys created.
+2)	Check the configuration of the function app. Add configurations into the function app if required.
+3)	Check the network setting of the function app.
+4)	The function app should have a private endpoint and should be connected to a virtual network.
+
+How the storage account should be created for the function app?
+1)	The storage account should be in the same location, resource group of the function app.
+2)	The storage account should have a private endpoint.
+What to check after the storage account is created for the function app?
+1)	Check the networking section of the storage account.
+2)	The firewall setting of the storage account should only allow access from the selected networks.
+3)	Add virtual network and subnet to the firewall settings which is the outbound from the function app too. This is very crucial to not lose the function app keys.
+4)	Check the containers in the storage account. The containers store the function app keys.
+
+Why could the Function App lose the App keys?
+Following are the reasons Function App could lose the App keys:
+1)	If the storage account is changed for the function app without copying the contents from one storage account to another.
+2)	If the storage account is changed to a private endpoint and in the firewall the selected incoming networks are not having the virtual network and sunbet selected. The subnet and virtual network should be the same that we have for the function app.
+3)	???(I donot understand this) The function keys are stored in this container of the storage account. IT should be copied in case of switching to another storage account.
