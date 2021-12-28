@@ -1,0 +1,101 @@
+variable "location" {
+  description = " Resource Location"
+}
+
+variable "resource_group_name" {
+  description = " Resource group of the App Service"
+}
+
+#variable "app_service_plan_id" {}
+
+variable "tags" {
+  default = { applicationName         = "SBX App Service Plan"
+    environment             = "Sandbox"
+    costCenter              = "5005110006"
+    applicationOwner        = "~CloudInfrastructure@fi.com"
+    businessUnit            = "IT Infrastructure and Operations"
+    disasterRecover         = "Non-Critical"
+    serviceClass            = "Development"
+    dataClass               = "Non-Restricted"
+    supportOwner            = "~CloudInfrastructure@fi.com"
+}
+}
+variable "identity" {
+  description = "Type of Managed Identity which should be assigned to the virtual machine. Possible values are SystemAssigned, UserAssigned, and SystemAssigned, UserAssigned"
+  
+    
+  default = null
+}
+variable "site_config" {
+  default = null
+}
+
+variable "functionappname" {
+  description = " Name of the App Service"
+}
+
+#variable "storage_account_access_key" {}
+
+variable "storage_account_name" {
+}
+
+#variable "managed_identities" {}
+
+#variable "user_assigned_identity" {}
+
+variable "connection_strings" {
+  default = {}
+}
+
+variable "app_settings" {
+  default = null
+}
+                                     
+variable "slots" {
+  default = {}
+}
+
+variable "application_insight" {
+  default = null
+}
+
+#variable "base_tags" {}
+
+
+variable "combined_objects" {
+  default = {}
+}
+
+
+variable "framework" {
+
+  default = null
+}
+
+variable "workers" {
+  default = null
+}
+
+
+
+variable "dynamic_app_settings" {
+  default = {}
+}
+
+
+variable "subnet_id" {
+  default = null
+}
+variable "https_only" {
+  default = true
+}
+
+#variable "app_sub_net"{}
+
+variable "sa_firewall_enabled"{
+  default = true
+  type    = bool
+}
+variable "assign_identity"{
+default     = true
+}
