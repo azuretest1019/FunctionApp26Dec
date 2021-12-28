@@ -1,0 +1,9 @@
+data "azurerm_subnet" "example" {
+
+  name                 = "a00002apimdev"
+
+  virtual_network_name = "00002-ahnet-dev"
+
+  resource_group_name  = "00002-monikarg-test"
+
+}
